@@ -1,0 +1,35 @@
+div {
+  /* height : 200px;
+  width: 200px;
+  border: black solid 5px;
+  padding: 50px;
+  box-sizing: border-box; */
+
+}
+.image-1-container {
+  height:600px;
+  width: 200px;
+  background-color: lime;
+}
+
+#first-div {
+  background-color: #39cccc;
+  box-sizing: initial 10px;
+}
+
+#second-div {
+  background-color: #ff4136;
+}
+
+p {
+  background-color: #7fdbff;
+}
+.image-1-container > img + img{
+  width : 100%
+}
+
+
+.image-2-container {
+  background-color: lime;
+  box-sizing: initial 200px;
+}

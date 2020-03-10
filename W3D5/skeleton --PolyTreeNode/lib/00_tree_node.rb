@@ -1,5 +1,5 @@
-class PolyTreeNode
 require "byebug"
+class PolyTreeNode
     attr_accessor :parent, :children, :value
 
     def initialize(value)
@@ -18,7 +18,7 @@ require "byebug"
         if parentnode.nil? 
             @parent = nil
         else
-            # debugger
+                debugger
             @parent = parentnode
             
             if !parentnode.children.include?(self)
