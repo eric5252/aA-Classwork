@@ -1083,3 +1083,2915 @@ Processing by UsersController#create as */*
 Completed 422 Unprocessable Entity in 15ms (Views: 0.1ms | ActiveRecord: 0.8ms)
 
 
+Started POST "/users?user[username]=eyal" for ::1 at 2020-03-20 09:36:09 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/eric/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"eyal"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "eyal"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 422 Unprocessable Entity in 19ms (Views: 0.2ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/users?user[username]=eric" for ::1 at 2020-03-20 09:36:18 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"eric"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "eric"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 422 Unprocessable Entity in 9ms (Views: 0.2ms | ActiveRecord: 2.6ms)
+
+
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "project1_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "project1_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtworks (20200320163903)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" bigserial primary key, "title" character varying NOT NULL, "img_url" character varying NOT NULL, "artist_id" integer NOT NULL)[0m
+  ↳ db/migrate/20200320163903_create_artworks.rb:3
+  [1m[35m (3.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (42.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "project1_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (35.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "project1_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (124.9ms)[0m  [1m[35mCREATE DATABASE "project1_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (68.1ms)[0m  [1m[35mCREATE DATABASE "project1_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200319231625)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200319221846),
+(20200319222241),
+(20200319230806),
+(20200319231008),
+(20200319215030);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-20 16:49:45.910770"], ["updated_at", "2020-03-20 16:49:45.910770"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200319231625)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200319221846),
+(20200319222241),
+(20200319230806),
+(20200319231008),
+(20200319215030);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-20 16:49:45.979515"], ["updated_at", "2020-03-20 16:49:45.979515"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-03-20 16:49:45.985419"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtworks (20200320163903)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" bigserial primary key, "title" character varying NOT NULL, "img_url" character varying NOT NULL, "artist_id" integer NOT NULL)[0m
+  ↳ db/migrate/20200320163903_create_artworks.rb:3
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtworks (20200320163903)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" bigserial primary key, "title" character varying NOT NULL, "img_url" character varying NOT NULL, "artist_id" integer NOT NULL)[0m
+  ↳ db/migrate/20200320163903_create_artworks.rb:3
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtworks (20200320163903)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtworks (20200320163903)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" bigserial primary key, "title" character varying NOT NULL, "img_url" character varying NOT NULL, "artist_id" integer NOT NULL)[0m
+  ↳ db/migrate/20200320163903_create_artworks.rb:3
+  [1m[35m (4.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtworks (20200320163903)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" bigserial primary key, "title" character varying NOT NULL, "img_url" character varying NOT NULL, "artist_id" integer NOT NULL)[0m
+  ↳ db/migrate/20200320163903_create_artworks.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_artworks_on_artist_id" ON "artworks"  ("artist_id")[0m
+  ↳ db/migrate/20200320163903_create_artworks.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200320163903"]]
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:06:44 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/eric/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [POST] "/artworks"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:08:09 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/eric/Desktop/aA_Classwork/W6D3/project1/app/models/artwork.rb:3: syntax error, unexpected tLABEL
+...ates :title, uniqueness: scope: :artist_id 
+...                         ^~~~~~):
+  
+app/models/artwork.rb:3: syntax error, unexpected tLABEL
+app/controllers/artworks_controller.rb:8:in `create'
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:09:20 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (:attributes cannot be blank):
+  
+app/models/artwork.rb:3:in `<class:Artwork>'
+app/models/artwork.rb:1:in `<top (required)>'
+app/controllers/artworks_controller.rb:8:in `create'
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:09:39 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Exists (3.4ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" IS NULL AND "artworks"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 422 Unprocessable Entity in 24ms (Views: 0.3ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:10:08 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" IS NULL AND "artworks"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 422 Unprocessable Entity in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to FixArtworkIndex (20200320171458)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to FixArtworkIndex (20200320171458)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to FixArtworkIndex (20200320171458)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE  INDEX  "index_artworks_on_artist_id_and_title" ON "artworks"  ("artist_id", "title")[0m
+  ↳ db/migrate/20200320171458_fix_artwork_index.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200320171458"]]
+  ↳ bin/rails:9
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to FixArtworkIndex2 (20200320173212)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.2ms)[0m  [1m[35mDROP INDEX  "index_artworks_on_artist_id_and_title"[0m
+  ↳ db/migrate/20200320173212_fix_artwork_index2.rb:4
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_artworks_on_artist_id_and_title" ON "artworks"  ("artist_id", "title")[0m
+  ↳ db/migrate/20200320173212_fix_artwork_index2.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200320173212"]]
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:47:18 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/eric/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" IS NULL AND "artworks"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 422 Unprocessable Entity in 23ms (Views: 0.2ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:49:18 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" IS NULL AND "artworks"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:50:54 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" IS NULL AND "artworks"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 422 Unprocessable Entity in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:54:23 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" IS NULL AND "artworks"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 422 Unprocessable Entity in 43ms (Views: 0.2ms | ActiveRecord: 13.3ms)
+
+
+Started POST "/users/?user[username]=eric" for ::1 at 2020-03-20 10:55:16 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"eric"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "eric"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username") VALUES ($1) RETURNING "id"[0m  [["username", "eric"]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:55:27 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" IS NULL AND "artworks"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 422 Unprocessable Entity in 7ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:57:48 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" IS NULL AND "artworks"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 422 Unprocessable Entity in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/artworks?artwork[title]&artwork[img_url]=asfsfkjsfaf&artwork[artist_id]=1" for ::1 at 2020-03-20 10:57:55 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>nil, "img_url"=>"asfsfkjsfaf", "artist_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" IS NULL AND "artworks"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 422 Unprocessable Entity in 6ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/artworks" for ::1 at 2020-03-20 10:59:08 -0700
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>"adf", "img_url"=>"asdfaf", "artist_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "adf"], ["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[36mArtwork Create (0.7ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "img_url", "artist_id") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "adf"], ["img_url", "asdfaf"], ["artist_id", 1]]
+  ↳ app/controllers/artworks_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:10
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtworksShare (20200320180424)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "artworks_shares" ("id" bigserial primary key, "artwork_id" integer NOT NULL, "viewer_id" integer NOT NULL)[0m
+  ↳ db/migrate/20200320180424_create_artworks_share.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200320180424"]]
+  ↳ bin/rails:9
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/users/?user[username]=eyal" for ::1 at 2020-03-20 11:39:22 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/eric/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"eyal"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "eyal"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username") VALUES ($1) RETURNING "id"[0m  [["username", "eyal"]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 200 OK in 34ms (Views: 0.4ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/users/1" for ::1 at 2020-03-20 11:39:36 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:18:in `show'
+Started GET "/users/eric" for ::1 at 2020-03-20 11:39:43 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"eric"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:18:in `show'
+Started GET "/users/1" for ::1 at 2020-03-20 11:40:13 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/users/2" for ::1 at 2020-03-20 11:40:18 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:41:01 -0700
+  
+LoadError (Unable to autoload constant ArtworkSharesController, expected /Users/eric/Desktop/aA_Classwork/W6D3/project1/app/controllers/artwork_shares_controller.rb to define it):
+  
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:61:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:17:in `allow_bootsnap_retry'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:60:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.4.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.4.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:41:35 -0700
+  
+LoadError (Unable to autoload constant ArtworkSharesController, expected /Users/eric/Desktop/aA_Classwork/W6D3/project1/app/controllers/artwork_shares_controller.rb to define it):
+  
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:61:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:17:in `allow_bootsnap_retry'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:60:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.4.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.4.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:42:33 -0700
+  
+LoadError (Unable to autoload constant ArtworkSharesController, expected /Users/eric/Desktop/aA_Classwork/W6D3/project1/app/controllers/artwork_shares_controller.rb to define it):
+  
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:61:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:17:in `allow_bootsnap_retry'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:60:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.4.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.4.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:44:22 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artwork_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:45:34 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artwork_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: artworks_shares):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:47:26 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artwork_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: artworks_share):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:47:32 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artworks_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 5.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:49:27 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artwork_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: artworks_shares):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:49:38 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artworks_shares"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:49:58 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artwork_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: artworks_shares):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 11:53:34 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artworks_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares?artworks_share[viewer_id]&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 11:54:30 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artworks_share"=>{"viewer_id"=>nil, "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares?artworks_share[viewer_id]&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:39:42 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artworks_share"=>{"viewer_id"=>nil, "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares?artworks_share[viewer_id]&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:41:14 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artwork_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}, "artworks_share"=>{"viewer_id"=>nil, "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares?artworks_share[viewer_id]&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:42:33 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artwork_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}, "artworks_share"=>{"viewer_id"=>nil, "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_shares?artworks_share[viewer_id]&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:42:36 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artwork_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}, "artworks_share"=>{"viewer_id"=>nil, "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artwork_shares_controller.rb:8:in `create'
+Started POST "/artwork_share?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:43:21 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/artwork_share"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_share?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:43:38 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkShareController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_share?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:43:58 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkShareController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_share?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:44:01 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkShareController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_share?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:44:02 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkShareController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_share?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:44:30 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkShareController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_share?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:44:50 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkShareController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_share?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:45:02 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/artwork_share"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_share?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:46:03 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/artwork_share"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_share?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:46:16 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/artworks_share"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:46:27 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworksSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:47:05 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworksSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 13:47:10 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworksSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 14:00:55 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworksSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 14:00:57 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworksSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 14:02:59 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/eric/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (uninitialized constant ArtworksSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 14:04:34 -0700
+Processing by ArtworksSharesController#create as */*
+  Parameters: {"artworks_shares"=>{"viewer_id"=>"1", "artwork_id"=>"1"}, "artworks_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant ArtworkShare, expected /Users/eric/Desktop/aA_Classwork/W6D3/project1/app/models/artwork_share.rb to define it):
+  
+app/controllers/artworks_shares_controller.rb:9:in `create'
+Started POST "/artworks_shares?artworks_share[viewer_id]=1&artworks_share[artwork_id]=1" for ::1 at 2020-03-20 14:09:48 -0700
+Processing by ArtworksSharesController#create as */*
+  Parameters: {"artworks_shares"=>{"viewer_id"=>"1", "artwork_id"=>"1"}, "artworks_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artworks_shares_controller.rb:9:in `create'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:16:38 -0700
+Processing by ArtworksSharesController#create as */*
+  Parameters: {"artworks_shares"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artworks_shares_controller.rb:9:in `create'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:28:59 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/eric/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by ArtworksSharesController#create as */*
+  Parameters: {"artworks_shares"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artworks_shares_controller.rb:9:in `create'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:31:36 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworksSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:32:05 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/artworks_shares"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:32:58 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/artworks_shares"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:33:00 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/artworks_shares"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:33:06 -0700
+  
+SyntaxError (/Users/eric/Desktop/aA_Classwork/W6D3/project1/app/controllers/artworks_shares_controller.rb:11: syntax error, unexpected keyword_if, expecting ')'
+        if artwork_share.save
+        ^~):
+  
+app/controllers/artworks_shares_controller.rb:11: syntax error, unexpected keyword_if, expecting ')'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:33:38 -0700
+Processing by ArtworksSharesController#create as */*
+  Parameters: {"artworks_shares"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant ArtworkShare, expected /Users/eric/Desktop/aA_Classwork/W6D3/project1/app/models/artwork_share.rb to define it):
+  
+app/controllers/artworks_shares_controller.rb:9:in `create'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:34:03 -0700
+Processing by ArtworksSharesController#create as */*
+  Parameters: {"artworks_shares"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: artwork_share):
+  
+app/controllers/artworks_shares_controller.rb:9:in `create'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:38:24 -0700
+Processing by ArtworksSharesController#create as */*
+  Parameters: {"artworks_shares"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "artwork_shares" does not exist
+LINE 8:                WHERE a.attrelid = '"artwork_shares"'::regcla...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"artwork_shares"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/artworks_shares_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DropArtworkShares (20200320214438)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mDROP TABLE "artworks_shares"[0m
+  ↳ db/migrate/20200320214438_drop_artwork_shares.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200320214438"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtworkShares (20200320214556)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "artwork_shares" ("id" bigserial primary key, "artwork_id" integer NOT NULL, "viewer_id" integer NOT NULL)[0m
+  ↳ db/migrate/20200320214556_create_artwork_shares.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200320214556"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:57:36 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/eric/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (uninitialized constant ArtworksSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:57:57 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/artworks_shares"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artworks_shares" for ::1 at 2020-03-20 14:58:17 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/artworks_shares"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 14:59:02 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/2" for ::1 at 2020-03-20 15:00:31 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/users/3" for ::1 at 2020-03-20 15:00:35 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  
+app/controllers/users_controller.rb:18:in `show'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 15:02:20 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 15:04:48 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 15:04:49 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users?user[username]" for ::1 at 2020-03-20 15:05:24 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>nil}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" DEFAULT VALUES RETURNING "id"[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 3.4ms)
+
+
+  
+ActiveRecord::NotNullViolation (PG::NotNullViolation: ERROR:  null value in column "username" violates not-null constraint
+DETAIL:  Failing row contains (3, null).
+: INSERT INTO "users" DEFAULT VALUES RETURNING "id"):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started GET "/users/1" for ::1 at 2020-03-20 15:06:33 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users?user[username]=afaf" for ::1 at 2020-03-20 15:06:47 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"afaf"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "afaf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username") VALUES ($1) RETURNING "id"[0m  [["username", "afaf"]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users?user[username]=eq" for ::1 at 2020-03-20 15:06:56 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"eq"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "eq"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username") VALUES ($1) RETURNING "id"[0m  [["username", "eq"]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/3" for ::1 at 2020-03-20 15:07:05 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  
+app/controllers/users_controller.rb:18:in `show'
+Started GET "/users/4" for ::1 at 2020-03-20 15:07:11 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/5" for ::1 at 2020-03-20 15:07:15 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/artwork_shares" for ::1 at 2020-03-20 16:06:35 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/eric/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (uninitialized constant ArtworkSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 16:07:02 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 16:07:04 -0700
+  
+ActionController::RoutingError (uninitialized constant ArtworkSharesController):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 16:07:31 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artwork_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/eric/Desktop/aA_Classwork/W6D3/project1/app/models/artwork_share.rb:9: syntax error, unexpected end-of-input, expecting keyword_end
+        class_name: :User
+                         ^):
+  
+app/models/artwork_share.rb:9: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/artwork_shares_controller.rb:3:in `create'
+Started POST "/artwork_shares" for ::1 at 2020-03-20 16:08:03 -0700
+Processing by ArtworkSharesController#create as */*
+  Parameters: {"artwork_share"=>{"viewer_id"=>"1", "artwork_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artwork_shares_controller.rb:5
+  [1m[36mArtwork Load (2.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artwork_shares_controller.rb:5
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artwork_shares_controller.rb:5
+  [1m[36mArtworkShare Create (3.0ms)[0m  [1m[32mINSERT INTO "artwork_shares" ("artwork_id", "viewer_id") VALUES ($1, $2) RETURNING "id"[0m  [["artwork_id", 1], ["viewer_id", 1]]
+  ↳ app/controllers/artwork_shares_controller.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artwork_shares_controller.rb:5
+Completed 201 Created in 66ms (Views: 0.5ms | ActiveRecord: 27.6ms)
+
+
+Started POST "/users?user[username]=adfasdfasdf" for ::1 at 2020-03-20 16:13:46 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"adfasdfasdf"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "adfasdfasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username") VALUES ($1) RETURNING "id"[0m  [["username", "adfasdfasdf"]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 11.9ms)
+
+
