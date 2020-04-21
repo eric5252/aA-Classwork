@@ -1,0 +1,50 @@
+<% if  type == :new %>
+    <% mango = cats_url %>
+    <% button_text = 'Adopt Cat' %>
+<% else %>
+    <% mango = cat_url(@cat) %>
+    <% button_text = 'Update Cat' %>
+<% end %>
+
+<form action="<%= mango %>" method="POST">
+    <% if type == :edit %>
+    <input type="hidden" name="_method" value="PATCH">
+    <% end %>
+
+    <label>
+        Name
+        <input type="text" name="cat[name]" value="<%= cat.name %>">
+    </label>
+
+    <label>
+        Birth Date
+        <input type="date" birth_date="cat[birth_date]" value="<%= cat.birth_date %>">
+    </label>
+
+
+    <label>
+        Color
+       <select name="cat.color">
+       <option disabled selected>Select Color</option>
+       <% Cat::COLORS.each do |color| %>
+       <option 
+       <%=cat.color == color ? "selected" : "" %>
+       value="<%= color %>">
+        <%= color %>
+       </option>
+       <% end %>    
+       </select>
+    </label>
+謝富丞
+黃裕傑
+    <label>
+        Sex
+        <input type="radio" name="cat[sex]" value="<%= cat.sex %>">
+    </label>
+    
+    <label>
+        Description
+        <input type="text" name="cat[description]" value="<%= cat.description %>">
+    </label>
+    <button type="submit"><%= button_text %></button>
+</form>

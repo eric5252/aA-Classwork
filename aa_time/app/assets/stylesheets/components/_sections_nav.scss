@@ -1,0 +1,25 @@
+.section_nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.section_nav > ul {
+    display: flex;
+}
+
+.section_nav > ul > li{
+    display: flex;
+    padding: 10px;
+    color: black;
+}
+
+.section_nav > ul > li:hover{
+    background-color: lightgray;
+    text-decoration: underline;
+}
+
+.section_nav a {
+    color: black
+}
